@@ -14,16 +14,18 @@ export const EXPERIENCE: ExperienceItem[] = [
     role: "Full Stack Developer",
     duration: "Nov 2024 – Present",
     techStack: [
-      "Next.js",
+      "React",
+      "Angular",
       "Node.js",
+      "Express",
       "PostgreSQL",
       "MongoDB",
       "MQTT",
       "WebSockets",
-      "Grafana Loki",
+      "Grafana",
       "Docker",
-      "RBAC",
-      "SSO",
+      "ArgoCD",
+      "CI/CD"
     ],
     details: [
       "Designed and implemented a centralized Single Sign-On authentication service, integrating multiple existing applications into a unified identity system and establishing a single source of authentication.",

@@ -1,13 +1,15 @@
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
+import headerImg from '@/public/header.jpg'
+import avatarImg from '@/public/avatar.jpg'
 
 export default function Header() {
   return (
     <header className="relative">
       {/* Banner */}
-      <div className="relative h-36 w-full overflow-hidden rounded-t-2xl">
+      <div className="relative h-36 w-full overflow-hidden rounded-t-2xl bg-zinc-900">
         <Image
-          src="/header.jpg"
+          src={headerImg}
           alt="Profile banner"
           fill
           className="object-cover"
@@ -20,11 +22,13 @@ export default function Header() {
         <div className="absolute -top-14 left-4">
           <div className="h-28 w-28 rounded-full border-4 border-zinc-950 bg-zinc-900 overflow-hidden">
             <Image
-              src="/avatar.jpg"
+              src={avatarImg}
               alt="Profile avatar"
               width={112}
               height={112}
               className="object-cover"
+              priority
+              quality={90}
             />
           </div>
         </div>

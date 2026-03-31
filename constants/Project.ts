@@ -27,7 +27,7 @@ export const PROJECTS: Project[] = [
 
     tagline: "Safe, natural language database querying",
     shortDescription:
-      "A self-hosted AI-powered assistant that lets developers query PostgreSQL databases using plain English without writing SQL.",
+      "A self-hosted AI-powered assistant that lets developers query PostgreSQL and MongoDB databases using plain English without writing any queries.",
 
     techStack: [
       "Node.js",
@@ -40,16 +40,16 @@ export const PROJECTS: Project[] = [
     ],
 
     problem:
-      "Debugging database-level issues required opening database clients, manually writing SQL queries, and repeatedly context-switching during development.",
+      "Debugging database-level issues required opening database clients, manually writing queries, and repeatedly context-switching during development.",
 
     solution:
-      "Built a self-hosted system that converts natural language questions into safe SQL queries, executes them against the database, and returns results instantly, eliminating manual query writing.",
+      "Built a self-hosted system that converts natural language questions into safe queries, executes them against the database, and returns results instantly, eliminating manual query writing.",
 
     architecture: [
       "Fastify backend managing database connections and request lifecycle",
       "Schema extraction at connection time and caching in Redis",
       "Deterministic schema pruning before sending context to the LLM",
-      "LLM-powered natural language to SQL translation",
+      "LLM-powered natural language to query translation",
       "Strict query validation allowing only SELECT statements",
       "Single active database mapping with connection pooling",
       "PostgreSQL for storing user-managed database metadata using Drizzle ORM",
@@ -57,7 +57,7 @@ export const PROJECTS: Project[] = [
     ],
 
     keyFeatures: [
-      "Natural language to SQL conversion",
+      "Natural language to query conversion",
       "Read-only query execution (SELECT-only safety guarantees)",
       "Schema-aware querying with context size control",
       "Self-hosted and developer-controlled deployment",

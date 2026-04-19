@@ -69,6 +69,42 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: "rate-limit",
+    name: "Rate Limit",
+
+    tagline: "In-memory and distributed rate limiting",
+    shortDescription:
+      "Implementation of sliding window and token bucket rate limiting algos with both in-memory and Redis-backed approaches.",
+
+    techStack: ["Python", "FastAPI", "Redis", "Lua", "Thread Locks"],
+
+    problem:
+      "Rate limiting is often explained conceptually, but understanding how algorithm choice, race conditions, and distributed state affect correctness requires a hands-on implementation.",
+
+    solution:
+      "Built a FastAPI project that implements sliding window and token bucket limiters using both in-memory and Redis backends, with per-key locking for local thread safety and Lua scripts for atomic distributed enforcement.",
+
+    architecture: [
+      "FastAPI application for testing and comparing rate limiting behaviors",
+      "Sliding window limiter storing and pruning per-request timestamps",
+      "Token bucket limiter managing capacity, refill rate, and token consumption",
+      "In-memory backend protected by per-key locks for same-key concurrency safety",
+      "Redis backend centralizing limiter state across multiple app instances",
+      "Lua scripts executing multi-step Redis logic atomically to avoid race conditions",
+      "Comparison of latency, consistency, and scalability tradeoffs across both backends",
+    ],
+
+    keyFeatures: [
+      "Sliding window and token bucket implementations",
+      "Both in-memory and Redis-backed limiter variants",
+      "Per-key locking for thread-safe in-memory limiting",
+      "Atomic Lua-scripted Redis operations for distributed correctness",
+    ],
+
+    sourceCode: "https://github.com/KAMAL-02/Rate-Limit",
+  },
+
+  {
     id: "postbro",
     name: "PostBro",
 

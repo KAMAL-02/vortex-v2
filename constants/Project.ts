@@ -69,6 +69,53 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: "payout-engine",
+    name: "Payout Engine",
+
+    tagline: "Payout orchestration with ledger integrity and fault-tolerant processing",
+    shortDescription:
+      "Simulates real-world money movement using append-only ledger, idempotent APIs, row-level locking, and async processing with retries.",
+
+    techStack: [
+      "Django",
+      "Django REST Framework",
+      "PostgreSQL",
+      "Celery",
+      "Redis",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
+
+    problem:
+      "Payout systems are correctness-critical: they must prevent duplicate disbursements, remain safe under concurrent requests, preserve an auditable source of truth for balances, and recover gracefully from delayed or failed processing.",
+
+    solution:
+      "Engineered a resilient payout engine that derives balances from an append-only ledger, enforces idempotent request handling, serializes balance reservation with database row locks, and offloads payout execution to asynchronous workers with retry and recovery workflows.",
+
+    architecture: [
+      "Django REST API exposing merchant balances, payout initiation, and payout history endpoints",
+      "PostgreSQL-backed ledger architecture with credit, hold, debit, and release events as the financial source of truth",
+      "Atomic payout creation flow using transaction.atomic and select_for_update() to prevent race conditions during fund reservation",
+      "Persistent idempotency layer storing request hashes, execution state, and replayable API responses for duplicate-safe retries",
+      "Celery + Redis powered background processing pipeline with retry scheduling for stuck or delayed payouts",
+      "React + TypeScript operations dashboard for merchant selection, live balance visibility, payout submission, and payout lifecycle monitoring",
+    ],
+
+    keyFeatures: [
+      "Ledger-driven balance computation with integer money storage for financial accuracy",
+      "Concurrency-safe payout reservation using transactional locking",
+      "Idempotent payout creation with stored response replay and conflict detection",
+      "State-machine based payout lifecycle validation with async retry orchestration",
+      "Operational dashboard for balances, ledger activity, payout history, and live status refresh",
+      "Backend tests covering idempotency guarantees and simultaneous payout race conditions",
+    ],
+
+    sourceCode: "https://github.com/KAMAL-02/Payout-Engine.git",
+    liveDemo: "https://payout-engine-chi.vercel.app/",
+  },
+
+  {
     id: "rate-limit",
     name: "Rate Limit",
 

@@ -63,7 +63,7 @@ export default function Header() {
             </a>
 
             <Separator orientation="vertical" className="h-4! bg-zinc-400!" />
-
+{/* 
             <a
               href="https://x.com/Kamal__Dev"
               target="_blank"
@@ -72,7 +72,7 @@ export default function Header() {
             >
             Twitter
             </a>
-            <Separator orientation="vertical" className="h-4! bg-zinc-400!" />
+            <Separator orientation="vertical" className="h-4! bg-zinc-400!" /> */}
 
             <a
               href="https://drive.google.com/file/d/1fF-TFhxjDD1tXY0TvttdlKdk26BGjVUx/view?usp=sharing"
